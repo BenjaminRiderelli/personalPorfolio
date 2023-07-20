@@ -1,0 +1,72 @@
+.kcontainer {
+  width: 40%;
+  min-height: 500px;
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .kcontainer {
+    width: 100%;
+  }
+}
+
+.kdiv:before,
+.kdiv:after,
+.kdiv {
+  content: "";
+  position: absolute;
+  border: 55px double rgba(232, 223, 105, 0.452);
+  outline: 60px double rgba(0, 0, 0, 0.733);
+}
+
+.kcontainer > .kdiv {
+  transform: translateX(1vw) translateY(-23vh);
+}
+
+@media (max-width: 1024px) {
+  .kdiv {
+    border: 25px double rgba(232, 223, 105, 0.452);
+    outline: 40px double rgba(0, 0, 0, 0.733);
+  }
+
+  .kcontainer > .kdiv {
+    transform: translateX(4vw) translateY(-6vh);
+  }
+  .kcontainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .kcontainer > .kdiv {
+    transform: translateX(8vw) translateY(-9vh);
+  }
+
+  .kdiv {
+    border: 25px double rgba(232, 223, 105, 0.452);
+    outline: 20px double rgba(0, 0, 0, 0.733);
+  }
+}
+
+.kdiv {
+  transform: rotate(0.1turn);
+  margin: 0.3em;
+}
+
+.kdiv:after {
+  animation: bloop 8s -8s infinite ease-in-out both alternate;
+}
+
+.kdiv:before {
+  animation: bloop 8s -2s infinite ease-in-out both alternate;
+}
+
+@keyframes bloop {
+  to {
+    transform: rotate(1.5turn);
+  }
+}
