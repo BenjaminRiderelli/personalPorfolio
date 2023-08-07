@@ -34,7 +34,7 @@ export default function AboutMe() {
   const [base, setBase] = useState("");
 
   const handleClick = (state: string) => {
-    setReflectionState((prevState:ReflectionState) => {
+    setReflectionState((prevState: ReflectionState) => {
       const updatedState = Object.keys(prevState).reduce((acc, key) => {
         if (key === state) {
           acc[key] = true;
@@ -49,25 +49,30 @@ export default function AboutMe() {
   };
 
   return (
-    <section className="flex flex-wrap-reverse w-full lg:h-screen border-2  border-black bg-white">
-      <div className="flex  flex-col gap-12  w-full lg:w-1/2 p-9 pt-20 border-2 border-black">
+    <section className="flex flex-wrap-reverse w-full min-h-screen border-2  border-black bg-white">
+      <div className="flex  min-h-screen flex-col gap-12  w-full lg:w-1/2 p-9 pt-20 border-2 border-black">
         <h1 className="text-6xl tracking-tighter">
           <span className="font-semibold">About</span> me
         </h1>
-        <div className="flex flex-col  gap-2">
-          {reflectionState.isActive && (
-            <p className="text-2xl  leading-8 tracking-wide">
-              One of my biggest passions in life besides technology is music,
-              and being always in the middle of both worlds has given me some
-              thoughts that might be fun to share.
-            </p>
-          )}
+        <div className="flex flex-col h-full gap-2">
+          <p className={`text-lg md:text-2xl  leading-8 tracking-wide `}>
+            One of my biggest passions in life besides technology is music, and
+            being always in the middle of both worlds has given me some thoughts
+            that might be fun to share...
+          </p>
+
           {reflectionState.identity && (
-            <div className="flex flex-col">
+            <div className="flex flex-col justify-between h-full">
               <div>
-                <p className="text-2xl  leading-8 tracking-wide">
-                  Think about how a captivating musical hook instantly grabs
-                  your attention.
+                <p className="text-lg md:text-2xl  leading-8 tracking-wide ">
+                  Just like a killer tune hooks you in, a well-designed UI grabs
+                  user's attention and gets them captivated by the application.
+                  It's all about that initial wow factor, smooth navigation, and
+                  cool visuals. When you think about it, UI acts just like
+                  musical hooks – keeping users engaged and entertained
+                  throughout their journey with the app or song. It's all about
+                  creating that enjoyable and memorable experience that keeps
+                  them coming back for more!
                 </p>
                 <p className="text-2xl  leading-8 tracking-wide"></p>
               </div>
@@ -75,24 +80,24 @@ export default function AboutMe() {
                 <Image
                   src={cssLogo}
                   alt="css-logo"
-                  className="w-28 md:w-48 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={tailWindLogo}
                   alt="tailwind-logo"
-                  className="w-28 md:w-48 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={jsLogo}
                   alt="js-logo"
-                  className="w-28 md:w-48 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
               </div>
             </div>
           )}
           {reflectionState.chops && (
-            <div className="flex flex-col items-center gap-8">
-              <p className="text-2xl  leading-8 tracking-wide">
+            <div className="flex flex-col items-center justify-between h-full">
+              <p className="text-lg md:text-2xl leading-8 tracking-wide">
                 Consider how a skilled musician impresses the audience with his
                 or her technical proficiency on an instrument. Similarly, the
                 performance of an application refers to its ability to function
@@ -110,24 +115,24 @@ export default function AboutMe() {
                 <Image
                   src={reactLogo}
                   alt="react-logo"
-                  className="w-48 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={tsLogo}
                   alt="ts-logo"
-                  className="w-48 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={nextLogo}
                   alt="next-logo"
-                  className="w-48 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
               </div>
             </div>
           )}
-          {groove[0] === "animated-text" && (
-            <div className="flex flex-col items-center gap-8">
-              <p className="text-2xl  leading-8 tracking-wide">
+          {reflectionState.groove && (
+            <div className="flex flex-col items-center justify-between h-full">
+              <p className="text-lg  md:text-2xl  leading-8 tracking-wide">
                 Alright, this is a good one. You know when a band is jamming
                 together, and everything just clicks? That's what I call a
                 groovy flow. Similarly, in the realm of software development, a
@@ -145,24 +150,24 @@ export default function AboutMe() {
                 <Image
                   src={ghLogo}
                   alt="github-logo"
-                  className="w-56 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={vsLogo}
                   alt="visual-studio-code-logo"
-                  className="w-48 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={dockerLogo}
                   alt="docker-logo"
-                  className="w-60 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
               </div>
             </div>
           )}
-          {base === "solid-base" && (
-            <div className="flex flex-col items-center gap-8">
-              <p className="text-2xl  leading-8 tracking-wide">
+          {reflectionState.base && (
+            <div className="flex flex-col items-center justify-between h-full">
+              <p className="text-lg md:text-2xl leading-8 tracking-wide">
                 In music, a solid base is the backbone of any great composition,
                 providing stability and setting the rhythm. Likewise, MongoDB,
                 Express, and Node.js form the core foundation of many modern web
@@ -176,17 +181,17 @@ export default function AboutMe() {
                 <Image
                   src={mongoLogo}
                   alt="mongodb-logo"
-                  className="w-60 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={nodejsLogo}
                   alt="nodejs-logo"
-                  className="w-52 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
                 <Image
                   src={expressLogo}
                   alt="exppress-logo"
-                  className="w-52 object-scale-down"
+                  className="w-20 md:w-36 object-scale-down"
                 />
               </div>
             </div>
@@ -198,36 +203,33 @@ export default function AboutMe() {
         className={`flex flex-col gap-12  w-full lg:w-1/2 p-9 pt-20 border-2 border-black`}
       >
         <div
-          // onMouseEnter={() => {
-          //   setIdentity("text_shadows");
-          // }}
-          // onMouseLeave={() => {
-          //   setIdentity("");
-          // }}
           onClick={(e) => {
-            handleClick("identity")
+            handleClick("identity");
+            setIdentity("text_shadows");
           }}
           className="flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer"
         >
-          <h2 className={`md:text-6xl lg:text-8xl font-bold ${identity}`}>
+          <h2
+            className={`text-3xl md:text-6xl lg:text-8xl font-bold ${
+              reflectionState.identity ? identity : ""
+            }`}
+          >
             Identity
           </h2>
         </div>
         <div
-          onClick={()=>{
-            handleClick("chops")
+          onClick={() => {
+            handleClick("chops");
+            setChops(["classy-chops", "classy-container"]);
           }}
-          // onClick={() => {
-          //   setChops(["classy-chops", "classy-container"]);
-          //   setIdentity("");
-          // }}
-          // onMouseLeave={() => {
-          //   setChops(["", ""]);
-          // }}
-          className={`flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer ${chops[1]}`}
+          className={`flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer ${
+            reflectionState.chops ? chops[1] : ""
+          }`}
         >
           <h2
-            className={`md:text-6xl lg:text-8xl font-bold tracking-tighter ${chops[0]}`}
+            className={`text-3xl md:text-6xl lg:text-8xl font-bold tracking-tighter ${
+              reflectionState.chops ? chops[0] : ""
+            }`}
           >
             Classy chops
           </h2>
@@ -235,36 +237,29 @@ export default function AboutMe() {
         <div
           onClick={() => {
             setGroove(["animated-text", "content"]);
+            handleClick("groove");
           }}
-          // onMouseLeave={() => {
-          //   setGroove(["", ""]);
-          // }}
-          className={`flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer ${groove[1]}`}
+          className={`flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer`}
         >
-          {groove[1] && (
-            <h2
-              className={`sm:text-xl md:text-xl lg:text-7xl font-bold tracking-tighter ${groove[0]}`}
-            >
-              Groovie flow
-            </h2>
-          )}
           <h2
-            className={`sm:text-xl md:text-xl lg:text-8xl font-bold tracking-tighter ${groove[0]}`}
+            className={`text-3xl md:text-6xl lg:text-8xl  font-bold tracking-tighter ${
+              reflectionState.groove ? "animate-character" : ""
+            }`}
           >
             Groovie flow
           </h2>
         </div>
         <div
           onClick={() => {
+            handleClick("base");
             setBase("solid-base");
           }}
-          // onMouseLeave={() => {
-          //   setBase("");
-          // }}
           className="flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer"
         >
           <h2
-            className={`md:text-6xl lg:text-8xl font-bold border-b-8 border-white ${base}`}
+            className={` text-3xl md:text-6xl lg:text-8xl font-bold border-b-8 border-white ${
+              reflectionState.base ? base : ""
+            }`}
           >
             Solid Base
           </h2>
