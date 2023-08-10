@@ -51,6 +51,7 @@ const FormSection = () => {
           },
           body: JSON.stringify(formData),
         });
+
         setIsPosting(false);
         setFormData({ name: "", email: "", message: "Thank you!" });
       } catch (e: any) {
