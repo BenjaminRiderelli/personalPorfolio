@@ -96,7 +96,7 @@ export default function AboutMe() {
             </div>
           )}
           {reflectionState.chops && (
-            <div className="flex flex-col items-center justify-between h-full">
+            <div className="flex flex-col items-center justify-between h-full gap-4">
               <p className="text-lg md:text-2xl leading-8 tracking-wide">
                 Consider how a skilled musician impresses the audience with his
                 or her technical proficiency on an instrument. Similarly, the
@@ -106,7 +106,7 @@ export default function AboutMe() {
                 performance capabilities leaves users impressed. It involves
                 minimizing issues such as lag, crashes, and slowdowns. A
                 well-performing application ensures a seamless user experience,
-                where operations flow effortlessly. 
+                where operations flow effortlessly.
               </p>
               <div className="flex gap-8 pb-4">
                 <Image
@@ -128,18 +128,18 @@ export default function AboutMe() {
             </div>
           )}
           {reflectionState.groove && (
-            <div className="flex flex-col items-center justify-between h-full">
+            <div className="flex flex-col items-center justify-between h-full gap-4">
               <p className="text-lg  md:text-2xl  leading-8 tracking-wide">
                 You know when a band is jamming together, and everything just
-                clicks? That's what I call a groovy flow. In the
-                realm of software development, a good usage of tools like
-                GitHub, VS code, and Docker along with solid team communication
-                creates a similar vibe. Software development It's all about that
-                seamless collaboration, where everyone is on the same page,
-                sharing code, resolving conflicts, and keeping things organized.
-                Just like musicians groove together, developers find their
-                rhythm by utilizing these tools, finding new ones and
-                maintaining effective communication.
+                clicks? That's what I call a groovy flow. In the realm of
+                software development, a good usage of tools like GitHub, VS
+                code, and Docker along with solid team communication creates a
+                similar vibe. Software development It's all about that seamless
+                collaboration, where everyone is on the same page, sharing code,
+                resolving conflicts, and keeping things organized. Just like
+                musicians groove together, developers find their rhythm by
+                utilizing these tools, finding new ones and maintaining
+                effective communication.
               </p>
               <div className="flex gap-8 pb-4">
                 <Image
@@ -161,7 +161,7 @@ export default function AboutMe() {
             </div>
           )}
           {reflectionState.base && (
-            <div className="flex flex-col items-center justify-between h-full">
+            <div className="flex flex-col items-center justify-between h-full gap-4">
               <p className="text-lg md:text-2xl leading-8 tracking-wide">
                 In music, a solid base is the backbone of any great composition,
                 providing stability and setting the rhythm. Likewise, MongoDB,
@@ -195,7 +195,7 @@ export default function AboutMe() {
       </div>
 
       <div
-        className={`lg:border-b-0 lg:border-l-2 border-black flex flex-col gap-12  w-full lg:w-1/2 p-9 pt-20 `}
+        className={`border-2 lg:border-b-0 lg:border-t-0 lg:border-l-2 border-black flex flex-col gap-12  w-full lg:w-1/2 p-9 pt-12 `}
       >
         <div
           onClick={(e) => {
