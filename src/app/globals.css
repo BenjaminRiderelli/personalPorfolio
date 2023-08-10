@@ -39,5 +39,13 @@ body {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
     }
+
+    .actionshrink{
+      transform:scale(0.98);
+    }
+
+    .textarea{
+      resize:none;
+    }
   }
 }

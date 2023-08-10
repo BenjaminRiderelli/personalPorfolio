@@ -4,7 +4,7 @@ import FormSection from "./(home)/(formsection)/formsection";
 
 export default function Home() {
   return (
-    <section className="h-screen">
+    <section className="min-h-screen">
       <HeroSection />
       <AboutMe />
       <FormSection/>
