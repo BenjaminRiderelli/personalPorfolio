@@ -6,7 +6,7 @@ export default function Projects() {
 
   return (
     <section className="flex h-full flex-col items-center justify-between">
-      <Project row="3"/>
+      <Project row="2"/>
     </section>
   );
 }

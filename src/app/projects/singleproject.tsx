@@ -47,23 +47,29 @@ export default function Project({ row }: ProjectProps) {
     updateTestData();
   }, []);
 
-  const Images = testData.pics.map((pic) => (
-    <Image
-      key={pic}
-      alt={"project pic"}
-      src={pic}
-      width={50}
-      height={70}
-      style={{objectFit: "contain"}}
-    />
+  const techStack = testData.techStack.map((tech) => (
+    <p className="text-xl">{tech}</p>
   ));
 
   return (
-    <section className="flex justify-start h-full w-full ">
+    <section className="flex flex-col lg:flex-row h-full w-full border-b-2 border-black ">
+      <div className="flex items-center  bg-white w-full h-full lg:w-3/4 ">
+        <Carousel images={testData.pics} />
+      </div>
 
-      <div className="flex w-1/2">
-      <Carousel images={testData.pics}/>
+      <div className="flex flex-col w-full min-h-full lg:w-1/2 bg-white lg:border-l-2 lg:border-black ">
+        <div className="flex flex-col lg:flex-row lg:border-b-2 lg:border-black h-full lg:h-1/4 w-full">
+          <div className="flex pt-8 lg:pt-0 items-center justify-center w-full lg:w-3/4  border-t-2 lg:border-r-2 lg:border-t-0  border-black pl-8">
+            <h2 className="text-5xl md:text-6xl">{testData.name}</h2>
+          </div>
+          <ul className="flex flex-row lg:flex-col justify-center p-4 gap-4">
+            {techStack}
+          </ul>
+        </div>
 
+        <div className="h-full w-full p-8">
+          <p className="w-full h-full text-xl">{testData.description}</p>
+        </div>
       </div>
     </section>
   );
