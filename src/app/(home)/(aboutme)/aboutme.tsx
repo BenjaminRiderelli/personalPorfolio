@@ -49,7 +49,7 @@ export default function AboutMe() {
   };
 
   return (
-    <section className="flex flex-wrap w-full min-h-screen border-2  border-black bg-white">
+    <section className="flex flex-wrap w-full min-h-screen border-2 border-t-0 border-b-0  border-black bg-white">
       <div className="flex  min-h-screen flex-col gap-12  w-full lg:w-1/2 p-9 pt-20 black">
         <h1 className="text-6xl tracking-tighter">
           <span className="font-semibold">About</span> me
