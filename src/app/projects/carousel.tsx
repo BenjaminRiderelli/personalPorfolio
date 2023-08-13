@@ -32,7 +32,12 @@ export const Carousel = ({ images }: CarouselProps) => {
   };
   return (
     <div className="flex items-center relative  w-full h-screen lg:h-full py-16 px-4 duration-500">
-      <Image style={{objectFit:"cover", objectPosition:"0% 0%"}} src={images[currentIndex]} fill={true} alt="project" />
+      <Image
+        style={{ objectFit: "cover", objectPosition: "0% 0%" }}
+        src={images[currentIndex]}
+        fill={true}
+        alt="project"
+      />
       <button
         onClick={() => handleClick("left")}
         className="border-2 border-black absolute hover:cursor-pointer active:scale-95 bg-white p-2"

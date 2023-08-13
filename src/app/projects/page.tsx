@@ -8,6 +8,9 @@ export default function Projects() {
     <section className="flex min-h-full flex-col items-center justify-between ">
       <Project row={2}/>
       <Project row={3}/>
+      <Project row={4}/>
+      <Project row={5}/>
+
     </section>
   );
 }
