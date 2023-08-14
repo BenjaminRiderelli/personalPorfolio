@@ -36,6 +36,7 @@ export default async function handler(
 
     return res.status(200).json({ body: response });
   } catch (e) {
+    console.log(e)
     return res.status(500).send({ message: "something went wrong x_x" });
   }
 }
