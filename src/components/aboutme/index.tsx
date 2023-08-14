@@ -1,18 +1,18 @@
 "use client";
 import { useState } from "react";
 import "./aboutme.css";
-import reactLogo from "../../../../public/assets/React-icon.svg.png";
-import tailWindLogo from "../../../../public/assets/Tailwind_CSS_Logo.svg.png";
-import nextLogo from "../../../../public/assets/nextlogo.png";
-import cssLogo from "../../../../public/assets/csslogo.png";
-import jsLogo from "../../../../public/assets/jslogo.png";
-import tsLogo from "../../../../public/assets/Typescript_logo.png";
-import ghLogo from "../../../../public/assets/GitHub-Mark.png";
-import vsLogo from "../../../../public/assets/Visual_Studio_Code_1.35_icon.png";
-import dockerLogo from "../../../../public/assets/dockerLogo.png";
-import mongoLogo from "../../../../public/assets/mongologo.jpg";
-import nodejsLogo from "../../../../public/assets/nodejslogo.png";
-import expressLogo from "../../../../public/assets/expresslogo.jpg";
+import reactLogo from "../../../public/assets/React-icon.svg.png";
+import tailWindLogo from "../../../public/assets/Tailwind_CSS_Logo.svg.png";
+import nextLogo from "../../../public/assets/nextlogo.png";
+import cssLogo from "../../../public/assets/csslogo.png";
+import jsLogo from "../../../public/assets/jslogo.png";
+import tsLogo from "../../../public/assets/Typescript_logo.png";
+import ghLogo from "../../../public/assets/GitHub-Mark.png";
+import vsLogo from "../../../public/assets/Visual_Studio_Code_1.35_icon.png";
+import dockerLogo from "../../../public/assets/dockerLogo.png";
+import mongoLogo from "../../../public/assets/mongologo.jpg";
+import nodejsLogo from "../../../public/assets/nodejslogo.png";
+import expressLogo from "../../../public/assets/expresslogo.jpg";
 
 import Image from "next/image";
 
