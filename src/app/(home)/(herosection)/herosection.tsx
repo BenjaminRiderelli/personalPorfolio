@@ -1,7 +1,7 @@
 
 import Kaleidoscope from "./kaleidoscope";
 
-export default function HeroSection() {
+const HeroSection = () => {
   return (
     <section 
     className="flex flex-wrap md:h-full min-h-screen justify-between p-2 pt-12 bg-white border-2 border-t-0 border-black ">
@@ -22,3 +22,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+export default HeroSection

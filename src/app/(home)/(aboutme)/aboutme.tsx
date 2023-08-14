@@ -66,7 +66,7 @@ export default function AboutMe() {
               <div>
                 <p className="text-lg md:text-2xl  leading-8 tracking-wide ">
                   {`Just like a killer tune hooks you in, a well-designed UI grabs
-                  user's attention and gets them captivated by the application.
+                  users attention and gets them captivated by the application.
                   It's all about that initial wow factor, smooth navigation, and
                   cool visuals. When you think about it, UI acts just like
                   musical hooks keeping users engaged and entertained
