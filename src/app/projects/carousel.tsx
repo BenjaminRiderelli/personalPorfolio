@@ -31,10 +31,12 @@ export const Carousel = ({ images }: CarouselProps) => {
     console.log(currentIndex);
   };
   return (
-    <div className="flex items-center relative  w-full h-screen lg:h-full py-16 px-4 duration-500">
+    <div className="flex items-center relative  w-full h-screen lg:h-full py-16 px-4">
       <Image
         style={{ objectFit: "cover", objectPosition: "0% 0%" }}
         src={images[currentIndex]}
+        className="transition-opacity opacity-0 duration-[2s]"
+        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
         fill={true}
         alt="project"
       />
