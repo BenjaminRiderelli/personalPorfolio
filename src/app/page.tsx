@@ -1,6 +1,6 @@
-import HeroSection from './(home)/(herosection)/herosection'
-import AboutMe from "./(home)/(aboutme)/aboutme";
-import FormSection from "./(home)/(formsection)/formsection";
+import HeroSection from './(home)/(herosection)'
+import AboutMe from "./(home)/(aboutme)";
+import FormSection from "./(home)/(formsection)";
 
 export default function Home() {
   return (
