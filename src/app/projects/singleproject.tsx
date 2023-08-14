@@ -55,7 +55,7 @@ export default function Project({ row }: ProjectProps) {
 
   const techStack = testData.techStack.map((tech) => (
     <li key={tech}>
-      <p className="text-xl">{tech}</p>
+      <p className="text-lg">{tech}</p>
     </li>
   ));
 
