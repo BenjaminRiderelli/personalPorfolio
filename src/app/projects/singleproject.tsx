@@ -51,7 +51,7 @@ export default function Project({ row }: ProjectProps) {
     };
 
     updateTestData();
-  }, []);
+  }, [row]);
 
   const techStack = testData.techStack.map((tech) => (
     <li key={tech}>

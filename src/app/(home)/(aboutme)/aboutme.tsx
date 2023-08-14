@@ -65,14 +65,14 @@ export default function AboutMe() {
             <div className="flex flex-col justify-between h-full">
               <div>
                 <p className="text-lg md:text-2xl  leading-8 tracking-wide ">
-                  Just like a killer tune hooks you in, a well-designed UI grabs
+                  {`Just like a killer tune hooks you in, a well-designed UI grabs
                   user's attention and gets them captivated by the application.
                   It's all about that initial wow factor, smooth navigation, and
                   cool visuals. When you think about it, UI acts just like
-                  musical hooks – keeping users engaged and entertained
+                  musical hooks keeping users engaged and entertained
                   throughout their journey with the app or song. It's all about
                   creating that enjoyable and memorable experience that keeps
-                  them coming back for more!
+                  them coming back for more!`}
                 </p>
                 <p className="text-2xl  leading-8 tracking-wide"></p>
               </div>
