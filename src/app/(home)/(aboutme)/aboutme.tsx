@@ -55,7 +55,7 @@ export default function AboutMe() {
           <span className="font-semibold">About</span> me
         </h1>
         <div className="flex flex-col h-full gap-2">
-          <p className={`text-lg md:text-2xl  leading-8 tracking-wide `}>
+          <p className={`text-lg md:text-2xl  leading-8 tracking-wide`}>
             One of my biggest passions in life besides technology is music, and
             being always in the middle of both worlds has given me some thoughts
             that might be fun to share...
