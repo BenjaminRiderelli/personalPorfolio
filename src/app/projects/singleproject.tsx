@@ -4,8 +4,6 @@ import { Skeleton } from "@mui/material";
 import { Carousel } from "./carousel";
 import { BsGithub, BsCodeSlash } from "react-icons/bs";
 
-import React from "react";
-
 interface SheetData {
   name: string;
   description: string;
@@ -56,6 +54,7 @@ export default function Project({ row }: ProjectProps) {
 
     updateTestData();
   }, [row]);
+
 
   const techStack = testData.techStack.map((tech) => (
     <li key={tech}>
@@ -115,47 +114,49 @@ export default function Project({ row }: ProjectProps) {
   }
 
   return (
-    <section
-      className={`flex flex-col ${
-        row % 2 == 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-      } h-full w-full border-b-2 border-black`}
-    >
-      <div className="flex items-center  bg-white w-full min-h-screen lg:w-3/4">
-        <Carousel images={testData.pics} />
-      </div>
-
-      <div
-        className={`flex flex-col w-full min-h-screen lg:w-1/2 bg-white ${
-          row % 2 == 0 ? "lg:border-l-2" : "lg:border-r-2"
-        } lg:border-black`}
+    <>
+      <section
+        className={`flex flex-col ${
+          row % 2 == 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+        } h-full w-full border-b-2 border-black`}
       >
-        <div className="flex flex-col lg:flex-row lg:border-b-2 lg:border-black h-full lg:h-1/4 w-full">
-          <div className="flex pt-8 lg:pt-0 items-center justify-center w-full lg:w-3/4  border-t-2 lg:border-r-2 lg:border-t-0  border-black pl-8">
-            <h2 className="text-4xl">{testData.name}</h2>
-          </div>
-          <ul className="flex flex-col md:flex-row lg:flex-col justify-center p-8 gap-4">
-            {techStack}
-          </ul>
+        <div className="flex items-center  bg-white w-full min-h-screen lg:w-3/4">
+          <Carousel images={testData.pics} />
         </div>
 
-        <div className="flex flex-col justify-between gap-8 h-full w-full p-8 ">
-          <p className="w-full h-full text-xl">{testData.description}</p>
-          <div className="flex gap-16">
-            <span className="flex gap-4 items-center cursor-pointer">
-              <BsCodeSlash />
-              <a target="_blank" href={testData.workingLink}>
-                Live Link
-              </a>
-            </span>
-            <span className="flex gap-4 items-center cursor-pointer">
-              <BsGithub />
-              <a target="_blank" href={testData.githubLink}>
-                Github Link
-              </a>
-            </span>
+        <div
+          className={`flex flex-col w-full min-h-screen lg:w-1/2 bg-white ${
+            row % 2 == 0 ? "lg:border-l-2" : "lg:border-r-2"
+          } lg:border-black`}
+        >
+          <div className="flex flex-col lg:flex-row lg:border-b-2 lg:border-black h-full lg:h-1/4 w-full">
+            <div className="flex pt-8 lg:pt-0 items-center justify-center w-full lg:w-3/4  border-t-2 lg:border-r-2 lg:border-t-0  border-black pl-8">
+              <h2 className="text-4xl">{testData.name}</h2>
+            </div>
+            <ul className="flex flex-col md:flex-row lg:flex-col justify-center p-8 gap-4">
+              {techStack}
+            </ul>
+          </div>
+
+          <div className="flex flex-col justify-between gap-8 h-full w-full p-8 ">
+            <p className="w-full h-full text-xl">{testData.description}</p>
+            <div className="flex gap-16">
+              <span className="flex gap-4 items-center cursor-pointer">
+                <BsCodeSlash />
+                <a target="_blank" href={testData.workingLink}>
+                  Live Link
+                </a>
+              </span>
+              <span className="flex gap-4 items-center cursor-pointer">
+                <BsGithub />
+                <a target="_blank" href={testData.githubLink}>
+                  Github Link
+                </a>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
