@@ -3,7 +3,7 @@ import Project from "./singleproject"
 
 export default function Projects() {
 
-  const imgUrl = "http://localhost:3000/api/og?title=hola&emoji=🔥";
+  const imgUrl = "/api/og?title=hola&emoji=🔥";
 
 
   return (
