@@ -195,7 +195,7 @@ export default function AboutMe() {
       </div>
 
       <div
-        className={`border-2 lg:border-b-0 lg:border-t-0 lg:border-l-2 border-black flex flex-col gap-12  w-full lg:w-1/2 p-9 pt-12 `}
+        className={`border-t-2 lg:border-b-0 lg:border-t-0 lg:border-l-2 border-black flex flex-col gap-12  w-full lg:w-1/2 p-9 pt-12 `}
       >
         <div
           onClick={(e) => {
