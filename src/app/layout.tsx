@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
@@ -21,12 +21,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const lightModeFromStorage = localStorage.getItem("lightMode");
-  const parsedLightMode = lightModeFromStorage
-    ? JSON.parse(lightModeFromStorage)
-    : true;
-  const [lightModeIsChecked, setLightModeIsChecked] = useState(parsedLightMode);
+
+  const [lightModeIsChecked, setLightModeIsChecked] = useState(true);
   const [showNavBar, setShowNavBar] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const lightModeFromStorage = localStorage.getItem("lightMode");
+      const parsedLightMode = lightModeFromStorage
+        ? JSON.parse(lightModeFromStorage)
+        : true;
+      setLightModeIsChecked(parsedLightMode)      
+    }
+  }, []);
 
   const handleChange = () => {
     localStorage.setItem("lightMode", JSON.stringify(!lightModeIsChecked));
@@ -34,8 +41,8 @@ export default function RootLayout({
   };
 
   const toggleNavBar = () => {
-    setShowNavBar(!showNavBar)
-  }
+    setShowNavBar(!showNavBar);
+  };
 
   const navLinksEl = navLinks?.map((navlink) => {
     const selectedLinkClass = clsx({
@@ -60,13 +67,15 @@ export default function RootLayout({
       <head>
         <title>Benjamin Riderelli</title>
       </head>
-      <body className={`relative flex flex-col min-h-screen no-scrollbar ${showNavBar ? "overflow-hidden" : ""}`}>
+      <body
+        className={`relative flex flex-col min-h-screen no-scrollbar ${
+          showNavBar ? "overflow-hidden" : ""
+        }`}
+      >
         <nav className="flex justify-between gap-8 py-4 px-8 md:px-12 text-xl w-full border-2 border-black bg-white dark:text-dark-text-color dark:bg-dark-bg-color dark:border-dark-text-color">
           <h1>Benjamin Riderelli</h1>
           <div className="text-2xl md:hidden">
-            <AiOutlineMenu 
-            onClick={toggleNavBar}
-            />
+            <AiOutlineMenu onClick={toggleNavBar} />
           </div>
           <div className="hidden md:flex gap-8 items-center">
             {navLinksEl}
@@ -83,9 +92,10 @@ export default function RootLayout({
           {showNavBar && (
             <div className="w-screen min-h-screen h-full text-light-text-color dark:text-dark-text-color bg-light-bg-color dark:bg-dark-bg-color absolute top-0 z-100">
               <div className="flex justify-end p-4 w-full">
-              <AiOutlineCloseCircle 
-              onClick={toggleNavBar}
-              className="text-4xl"/>
+                <AiOutlineCloseCircle
+                  onClick={toggleNavBar}
+                  className="text-4xl"
+                />
               </div>
               <div className="flex flex-col gap-16 py-32 items-center w-full h-full text-2xl">
                 {navLinksEl}
