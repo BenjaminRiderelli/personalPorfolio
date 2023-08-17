@@ -49,22 +49,22 @@ export default function AboutMe() {
   };
 
   return (
-    <section className="flex flex-wrap w-full min-h-screen border-2 border-t-0 border-b-0  border-black bg-white">
+    <section className="flex flex-wrap w-full min-h-screen border-2 border-t-0 border-b-0  border-light-text-color bg-light-bg-color dark:border-dark-text-color dark:bg-dark-bg-color">
       <div className="flex  min-h-screen flex-col gap-12  w-full lg:w-1/2 p-9 pt-20 black">
-        <h1 className="text-6xl tracking-tighter">
+        <h1 className="text-6xl tracking-tighter text-light-text-color dark:text-dark-text-color ">
           <span className="font-semibold">About</span> me
         </h1>
-        <div className="flex flex-col h-full gap-2">
-          <p className={`text-lg md:text-2xl  leading-8 tracking-wide`}>
+        <div className="flex flex-col h-full gap-2 text-light-text-color dark:text-dark-text-color">
+          <p className={`text-lg md:text-2xl leading-8 tracking-wide `}>
             One of my biggest passions in life besides technology is music, and
             being always in the middle of both worlds has given me some thoughts
             that might be fun to share...
           </p>
 
           {reflectionState.identity && (
-            <div className="flex flex-col justify-between h-full">
+            <div className="flex flex-col justify-between h-full ">
               <div>
-                <p className="text-lg md:text-2xl  leading-8 tracking-wide ">
+                <p className="text-lg md:text-2xl  leading-8 tracking-wide">
                   {`Just like a killer tune hooks you in, a well-designed UI grabs
                   users attention and gets them captivated by the application.
                   It's all about that initial wow factor, smooth navigation, and
@@ -195,14 +195,14 @@ export default function AboutMe() {
       </div>
 
       <div
-        className={`border-t-2 lg:border-b-0 lg:border-t-0 lg:border-l-2 border-black flex flex-col gap-12  w-full lg:w-1/2 p-9 pt-12 `}
+        className={`border-t-2 lg:border-b-0 lg:border-t-0 lg:border-l-2 border-light-text-color dark:border-dark-text-color flex flex-col gap-12  w-full lg:w-1/2 p-9 pt-12 text-light-text-color dark:text-dark-text-color`}
       >
         <div
           onClick={(e) => {
             handleClick("identity");
             setIdentity("text_shadows");
           }}
-          className="flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer"
+          className="flex justify-center items-center border-2 border-light-text-color dark:border-dark-text-color h-1/4 hover:cursor-pointer"
         >
           <h2
             className={`text-3xl md:text-6xl lg:text-8xl font-bold ${
@@ -217,7 +217,7 @@ export default function AboutMe() {
             handleClick("chops");
             setChops(["classy-chops", "classy-container"]);
           }}
-          className={`flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer ${
+          className={`flex justify-center items-center border-2 border-light-text-color dark:border-dark-text-color h-1/4 hover:cursor-pointer ${
             reflectionState.chops ? chops[1] : ""
           }`}
         >
@@ -234,7 +234,7 @@ export default function AboutMe() {
             setGroove(["animated-text", "content"]);
             handleClick("groove");
           }}
-          className={`flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer`}
+          className={`flex justify-center items-center border-2 border-light-text-color dark:border-dark-text-color h-1/4 hover:cursor-pointer`}
         >
           <h2
             className={`text-3xl md:text-6xl lg:text-8xl  font-bold tracking-tighter ${
@@ -249,11 +249,11 @@ export default function AboutMe() {
             handleClick("base");
             setBase("solid-base");
           }}
-          className="flex justify-center items-center border-2 border-black h-1/4 hover:cursor-pointer"
+          className="flex justify-center items-center border-2 border-light-text-color dark:border-dark-text-color h-1/4 hover:cursor-pointer text-light-text-color dark:text-dark-text-color"
         >
           <h2
-            className={` text-3xl md:text-6xl lg:text-8xl font-bold border-b-8 border-white ${
-              reflectionState.base ? base : ""
+            className={` text-3xl md:text-6xl lg:text-8xl font-bold border-b-8 ${
+              reflectionState.base ? base : "solid-base-invisible"
             }`}
           >
             Solid Base

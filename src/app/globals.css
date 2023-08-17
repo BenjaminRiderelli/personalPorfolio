@@ -6,6 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --light-bg-color:#F7FFF7;
+  --dark-bg-color:#343434;
+  --light-text-color:#343434;
+  --dark-text-color:#F7FFF7;
 }
 
 

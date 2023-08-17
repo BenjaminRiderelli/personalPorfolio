@@ -65,10 +65,16 @@
 }
 
 .solid-base {
-  color: black;
   font-weight: 700;
   border-bottom:8px solid gold;
 }
+
+
+.solid-base-invisible {
+  font-weight: 700;
+  border-bottom:8px solid transparent;
+}
+
 
 
 .classy-chops {

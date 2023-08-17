@@ -1,0 +1,99 @@
+.wrapper {
+  user-select: none;
+  margin-bottom:-32px;
+}
+
+.toggleCheckbox {
+  display: none;
+}
+
+.label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  margin: 0 auto;
+  background-color: #77b5fe;
+  border-radius: 56px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+  overflow: hidden;
+}
+
+.starWrapper {
+  position: absolute;
+  top: -1px;
+  left: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  transform: scale(1);
+  border-radius: 50%;
+  transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform,
+    0.3s ease background-color;
+  z-index: 1;
+}
+
+.starOne {
+  position: relative;
+}
+
+.starTwo {
+  position: absolute;
+  transform: rotateZ(36deg);
+}
+
+.star {
+  top: 1px;
+  left: -7px;
+  font-size: 40px;
+  line-height: 28px;
+  color: #fafd0f;
+  transition: 0.3s ease color;
+}
+
+.moon {
+  position: absolute;
+  bottom: -52px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s ease bottom;
+}
+
+.moon:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -7px;
+  width: 20px;
+  height: 20px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s ease background-color;
+}
+
+.isChecked + .label {
+  background-color: #000;
+}
+
+.isChecked + .label .starWrapper {
+  top: 3px;
+  left: 64px;
+  transform: scale(0.3);
+  background-color: yellow;
+}
+
+.isChecked + .label .star {
+  color: yellow;
+}
+
+.isChecked + .label .moon {
+  bottom: 6px;
+}
+
+.isChecked + .label .moon:before {
+  background-color: #000;
+}
