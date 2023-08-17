@@ -1,20 +1,6 @@
 "use client";
 import { useState } from "react";
 import "./aboutme.css";
-import reactLogo from "../../../public/assets/React-icon.svg.png";
-import tailWindLogo from "../../../public/assets/Tailwind_CSS_Logo.svg.png";
-import nextLogo from "../../../public/assets/nextlogo.png";
-import cssLogo from "../../../public/assets/csslogo.png";
-import jsLogo from "../../../public/assets/jslogo.png";
-import tsLogo from "../../../public/assets/Typescript_logo.png";
-import ghLogo from "../../../public/assets/GitHub-Mark.png";
-import vsLogo from "../../../public/assets/Visual_Studio_Code_1.35_icon.png";
-import dockerLogo from "../../../public/assets/dockerLogo.png";
-import mongoLogo from "../../../public/assets/mongologo.jpg";
-import nodejsLogo from "../../../public/assets/nodejslogo.png";
-import expressLogo from "../../../public/assets/expresslogo.jpg";
-
-import Image from "next/image";
 
 interface ReflectionState {
   [key: string]: boolean;
@@ -76,23 +62,6 @@ export default function AboutMe() {
                 </p>
                 <p className="text-2xl  leading-8 tracking-wide"></p>
               </div>
-              <div className="flex gap-8 justify-center pt-14">
-                <Image
-                  src={cssLogo}
-                  alt="css-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={tailWindLogo}
-                  alt="tailwind-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={jsLogo}
-                  alt="js-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-              </div>
             </div>
           )}
           {reflectionState.chops && (
@@ -108,23 +77,6 @@ export default function AboutMe() {
                 well-performing application ensures a seamless user experience,
                 where operations flow effortlessly.
               </p>
-              <div className="flex gap-8 pb-4">
-                <Image
-                  src={reactLogo}
-                  alt="react-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={tsLogo}
-                  alt="ts-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={nextLogo}
-                  alt="next-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-              </div>
             </div>
           )}
           {reflectionState.groove && (
@@ -141,23 +93,6 @@ export default function AboutMe() {
                 utilizing these tools, finding new ones and maintaining
                 effective communication.
               </p>
-              <div className="flex gap-8 pb-4">
-                <Image
-                  src={ghLogo}
-                  alt="github-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={vsLogo}
-                  alt="visual-studio-code-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={dockerLogo}
-                  alt="docker-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-              </div>
             </div>
           )}
           {reflectionState.base && (
@@ -172,23 +107,6 @@ export default function AboutMe() {
                 building dynamic and scalable web applications, ensuring a
                 harmonious and successful development process.
               </p>
-              <div className="flex gap-8 pb-4">
-                <Image
-                  src={mongoLogo}
-                  alt="mongodb-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={nodejsLogo}
-                  alt="nodejs-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-                <Image
-                  src={expressLogo}
-                  alt="exppress-logo"
-                  className="w-20 md:w-36 object-scale-down"
-                />
-              </div>
             </div>
           )}
         </div>
