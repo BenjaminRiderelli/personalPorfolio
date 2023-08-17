@@ -78,7 +78,9 @@ export default function RootLayout({
         <nav className="flex justify-between gap-8 py-4 px-8 md:px-12 text-xl w-full border-2 border-black bg-light-bg-color dark:text-dark-text-color dark:bg-dark-bg-color dark:border-dark-text-color">
           <h1>Benjamin Riderelli</h1>
           <div className="text-2xl md:hidden">
-            <AiOutlineMenu onClick={toggleNavBar} />
+            <AiOutlineMenu 
+            className="cursor-pointer"
+            onClick={toggleNavBar} />
           </div>
           <div className="hidden md:flex gap-8 items-center">
             {navLinksEl}
@@ -97,7 +99,7 @@ export default function RootLayout({
               <div className="flex justify-end p-4 w-full">
                 <AiOutlineCloseCircle
                   onClick={toggleNavBar}
-                  className="text-4xl"
+                  className="text-4xl cursor-pointer"
                 />
               </div>
               <div className="flex flex-col gap-16 py-32 items-center w-full h-full text-2xl">
