@@ -64,7 +64,7 @@ const FormSection = () => {
     <section className="flex flex-wrap-reverse md:gap-20 lg:gap-80 py-8 justify-center items-center min-h-screen bg-light-bg-color dark:bg-dark-bg-color border-2 border-light-text-color dark:border-dark-text-color">
       <div className="w-3/4 h-[500px] md:w-1/2 lg:w-1/3 md:min-h-[600px] border-2 border-light-text-color dark:border-dark-text-color">
         <form
-          className={`flex flex-col items-start justify-between md:justify-around w-full h-full p-2 pt-8 text-dark-text-color dark:text-light-text-color`}
+          className={`flex flex-col items-start justify-between md:justify-around w-full h-full p-2 pt-8 text-dark-text-color`}
         >
           <div className="flex flex-col w-full text-light-text-color dark:text-dark-text-color  ">
             <label htmlFor="name">Name</label>
@@ -73,7 +73,7 @@ const FormSection = () => {
               onChange={handleChange}
               id="name"
               name="name"
-              className="border-2 border-light-text-color dark:border-dark-text-color h-12 p-2 text-xl"
+              className="border-2 text-light-text-color border-light-text-color dark:border-dark-text-color h-12 p-2 text-xl"
               type="text"
             />
           </div>
@@ -84,7 +84,7 @@ const FormSection = () => {
               onChange={handleChange}
               id="contact"
               name="email"
-              className="border-2 border-light-text-color dark:border-dark-text-color h-12 p-2 text-xl"
+              className="border-2 border-light-text-color dark:border-dark-text-color h-12 p-2 text-xl text-light-text-color"
               type="email"
             />
           </div>
@@ -97,7 +97,7 @@ const FormSection = () => {
               rows={5}
               cols={10}
               name="message"
-              className="textarea border-2 border-light-text-color dark:border-dark-text-color p-2 text-xl"
+              className="textarea border-2 border-light-text-color dark:border-dark-text-color p-2 text-xl text-light-text-color"
             ></textarea>
           </div>
 
