@@ -116,7 +116,7 @@ const FormSection = () => {
                 e.preventDefault();
                 handleSubmit(formData);
               }}
-              className="border-2 border-light-bg-color dark:border-dark-text-color w-1/2 active:actionshrink text-2xl text-light-text-color dark:text-dark-text-color"
+              className="border-2 border-light-text-color dark:border-dark-text-color w-1/2 active:actionshrink text-2xl text-light-text-color dark:text-dark-text-color"
             >
               {isPosting ? "Sending..." : "Send"}
             </button>
