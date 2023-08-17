@@ -4,7 +4,7 @@ import Kaleidoscope from "./kaleidoscope";
 const HeroSection = () => {
   return (
     <section 
-    className="flex flex-wrap md:h-full min-h-screen justify-between p-2 pt-12 bg-white border-2 border-t-0 border-black ">
+    className="flex flex-wrap md:h-full min-h-screen justify-between p-2 pt-12 bg-light-bg-color dark:bg-dark-bg-color border-2 border-t-0 border-black dark:border-dark-text-color dark:text-dark-text-color">
       <Kaleidoscope />
       <div className="flex flex-col gap-12  md:gap-3  lg:gap-9 w-full lg:w-1/2 min-h-500px p-9 lg:pt-32">
         <h1 className="text-6xl tracking-tighter">

@@ -33,7 +33,7 @@ export const Carousel = ({ images }: CarouselProps) => {
   return (
     <div className="flex items-center relative  w-full h-screen lg:h-full py-16 px-4">
       <Image
-        style={{ objectFit: "cover", objectPosition: "0% 0%" }}
+        style={{ objectFit: "cover", objectPosition:"0% 0%" }}
         src={images[currentIndex]}
         className="transition-opacity opacity-0 duration-[2s]"
         onLoadingComplete={(image) => image.classList.remove("opacity-0")}
@@ -55,8 +55,3 @@ export const Carousel = ({ images }: CarouselProps) => {
     </div>
   );
 };
-
-/* <div
-        style={{ backgroundImage: `url(${images[0]})` }}
-        className="w-full h-full bg-center bg-cover duration-500"
-      ></div> */
