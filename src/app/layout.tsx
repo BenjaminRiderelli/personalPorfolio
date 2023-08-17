@@ -31,7 +31,7 @@ export default function RootLayout({
       const parsedLightMode = lightModeFromStorage
         ? JSON.parse(lightModeFromStorage)
         : true;
-      setLightModeIsChecked(parsedLightMode)      
+      setLightModeIsChecked(parsedLightMode);
     }
   }, []);
 
@@ -53,6 +53,9 @@ export default function RootLayout({
     });
     return (
       <Link
+        onClick={() => {
+          setTimeout(() => setShowNavBar(false), 500);
+        }}
         className={selectedLinkClass}
         key={navlink.title}
         href={navlink.path}
@@ -72,7 +75,7 @@ export default function RootLayout({
           showNavBar ? "overflow-hidden" : ""
         }`}
       >
-        <nav className="flex justify-between gap-8 py-4 px-8 md:px-12 text-xl w-full border-2 border-black bg-white dark:text-dark-text-color dark:bg-dark-bg-color dark:border-dark-text-color">
+        <nav className="flex justify-between gap-8 py-4 px-8 md:px-12 text-xl w-full border-2 border-black bg-light-bg-color dark:text-dark-text-color dark:bg-dark-bg-color dark:border-dark-text-color">
           <h1>Benjamin Riderelli</h1>
           <div className="text-2xl md:hidden">
             <AiOutlineMenu onClick={toggleNavBar} />
