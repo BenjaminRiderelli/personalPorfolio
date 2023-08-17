@@ -133,7 +133,7 @@ export default function Project({ row }: ProjectProps) {
             <div className="flex pt-8 lg:pt-0 items-center justify-center w-full lg:w-3/4  border-t-2 lg:border-r-2 lg:border-t-0  border-light-text-color dark:border-dark-text-color pl-8">
               <h2 className="text-4xl">{testData.name}</h2>
             </div>
-            <ul className="flex flex-col md:flex-row lg:flex-col justify-center p-8 gap-4">
+            <ul className="flex flex-col md:flex-row lg:flex-col justify-center p-8 gap-2">
               {techStack}
             </ul>
           </div>
