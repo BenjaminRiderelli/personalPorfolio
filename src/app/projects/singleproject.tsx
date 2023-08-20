@@ -89,7 +89,7 @@ export default function Project({ row }: ProjectProps) {
           </div>
 
           <div className="flex flex-col justify-between gap-8 h-full w-full p-8 ">
-            <Skeleton height="80vh" />
+            <Skeleton height="100vh" />
 
             <div className="flex gap-16 text-light-text-color dark:text-dark-text-color">
               <span className="flex gap-4 items-center cursor-pointer">
@@ -121,7 +121,14 @@ export default function Project({ row }: ProjectProps) {
         <div className="flex items-center  bg-light-bg-color dark:bg-dark-bg-color w-full min-h-screen lg:w-3/4">
           <CustomCarousel>
             {testData.pics.map((image) => {
-              return <img className=" object-cover" key={image} alt="project image" src={image} />;
+              return (
+                <img
+                  className=" object-cover"
+                  key={image}
+                  alt="project image"
+                  src={image}
+                />
+              );
             })}
           </CustomCarousel>
         </div>
