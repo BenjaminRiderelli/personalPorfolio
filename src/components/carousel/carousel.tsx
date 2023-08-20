@@ -39,9 +39,9 @@ export default function Carousel({
         >
           <BsChevronCompactLeft size={40} />
         </button>
-        <div className="md:hidden absolute flex flex-col justify-center items-center transform -translate-x-1/2 -translate-y-1/2 border top-1/2 left-1/2 bg-slate-600 p-8 opacity-70">
-            <BsArrow90DegRight className="color-black"/>
-            <p className="text-black">Turn me arround</p>
+        <div className="md:hidden absolute flex flex-col justify-center items-center transform -translate-x-1/2 -translate-y-1/2 border top-1/2 left-1/2 bg-dark-bg-color p-8 opacity-70">
+            <BsArrow90DegRight className="text-dark-text-color font-bold"/>
+            <p className="text-dark-text-color font-bold ">Turn me arround</p>
         </div>
         <button
           onClick={next}
@@ -50,7 +50,7 @@ export default function Carousel({
           <BsChevronCompactRight size={40} />
         </button>
       </div>
-      <div className="absolute bottom-4 right-0 left-0">
+      {/* <div className="absolute bottom-4 right-0 left-0">
         <div className="flex items-center justify-center gap-2">
           {children.map((_, i) => (
             <div
@@ -61,7 +61,7 @@ export default function Carousel({
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
