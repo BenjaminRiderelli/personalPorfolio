@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Skeleton } from "@mui/material";
-import { Carousel } from "./carousel";
+import { CustomCarousel } from "./carousel";
 import { BsGithub, BsCodeSlash } from "react-icons/bs";
 
 interface SheetData {
@@ -121,7 +121,7 @@ export default function Project({ row }: ProjectProps) {
         } h-full w-full border-b-2 border-light-text-color dark:border-dark-text-color`}
       >
         <div className="flex items-center  bg-light-bg-color dark:bg-dark-bg-color w-full min-h-screen lg:w-3/4">
-          <Carousel images={testData.pics} />
+          <CustomCarousel images={testData.pics} />
         </div>
 
         <div

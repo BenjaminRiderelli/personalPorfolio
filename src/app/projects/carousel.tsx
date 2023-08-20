@@ -2,12 +2,14 @@
 import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import Image from "next/image";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 interface CarouselProps {
   images: any[];
 }
 
-export const Carousel = ({ images }: CarouselProps) => {
+export const CustomCarousel = ({ images }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleClick = (side: string) => {
@@ -32,14 +34,16 @@ export const Carousel = ({ images }: CarouselProps) => {
   };
   return (
     <div className="flex items-center relative  w-full h-screen lg:h-full py-16 px-4">
-      <Image
-        style={{ objectFit: "cover", objectPosition:"0% 0%" }}
-        src={images[currentIndex]}
-        className="transition-opacity opacity-0 duration-[2s]"
-        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-        fill={true}
-        alt="project"
-      />
+      <Carousel>
+        {images.map((image) => {
+          return (
+            <div>
+              <img src={image} />
+            </div>
+          );
+        })}
+      </Carousel>
+
       <button
         onClick={() => handleClick("left")}
         className="border-2 border-black absolute hover:cursor-pointer active:scale-95 bg-white p-2"
