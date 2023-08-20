@@ -1,44 +1,67 @@
-import { ReactNode, useState } from "react";
-import { BsChevronCompactRight, BsChevronCompactLeft } from "react-icons/bs";
+import { useState, useEffect, ReactNode } from "react";
+import { BsChevronCompactRight, BsChevronCompactLeft, BsArrow90DegRight } from "react-icons/bs";
 
 interface CarouselProps {
   children: ReactNode[];
+  autoSlide: boolean;
+  autoSlideInterval: number;
 }
 
-const CustomCarousel = ({ children }: CarouselProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export default function Carousel({
+  children,
+  autoSlide = false,
+  autoSlideInterval = 3000,
+}: CarouselProps) {
+  const [curr, setCurr] = useState(0);
 
-  const prevSlide = () =>
-    setCurrentSlide((current) => {
-      return current === 0 ? children.length : current - 1;
-    });
-  const nextSlide = () =>
-    setCurrentSlide((current) => {
-      return current === children.length - 1 ? 0 : current + 1;
-    });
+  const prev = () =>
+    setCurr((curr) => (curr === 0 ? children.length - 1 : curr - 1));
+  const next = () =>
+    setCurr((curr) => (curr === children.length - 1 ? 0 : curr + 1));
 
+  useEffect(() => {
+    if (!autoSlide) return;
+    const slideInterval = setInterval(next, autoSlideInterval);
+    return () => clearInterval(slideInterval);
+  }, []);
   return (
-    <div className="h-full w-full overflow-hidden relative">
+    <div className="overflow-hidden relative w-full">
       <div
-        className="flex h-full w-full transition-transform ease-out duration-500"
-        style={{ transform: `translateX(-${currentSlide * 100})%` }}
+        className="flex w-full transition-transform ease-out duration-500"
+        style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {children}
       </div>
-      <button
-        onClick={nextSlide}
-        className="border-2 border-black absolute right-4 top-1/2 hover:cursor-pointer active:scale-95 bg-white p-2 "
-      >
-        <BsChevronCompactRight size={30} />
-      </button>
-      <button
-        onClick={prevSlide}
-        className="border-2 border-black absolute left-4 top-1/2 hover:cursor-pointer active:scale-95 bg-white  p-2"
-      >
-        <BsChevronCompactLeft size={30} />
-      </button>
+      <div className="absolute inset-0 flex items-center justify-between p-4">
+        <button
+          onClick={prev}
+          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+        >
+          <BsChevronCompactLeft size={40} />
+        </button>
+        <div className="md:hidden absolute flex flex-col justify-center items-center transform -translate-x-1/2 -translate-y-1/2 border top-1/2 left-1/2 bg-slate-600 p-8 opacity-70">
+            <BsArrow90DegRight className="color-black"/>
+            <p className="text-black">Turn me arround</p>
+        </div>
+        <button
+          onClick={next}
+          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+        >
+          <BsChevronCompactRight size={40} />
+        </button>
+      </div>
+      <div className="absolute bottom-4 right-0 left-0">
+        <div className="flex items-center justify-center gap-2">
+          {children.map((_, i) => (
+            <div
+              className={`
+              transition-all w-3 h-3 bg-white rounded-full
+              ${curr === i ? "p-2" : "bg-opacity-50"}
+            `}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
-};
-
-export default CustomCarousel;
+}
