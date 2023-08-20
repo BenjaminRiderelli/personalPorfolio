@@ -6,9 +6,6 @@ import Head from 'next/head';
 export default function Home() {
   return (
     <section className="min-h-screen">
-      <Head>
-        <title>Benjamin Riderelli</title>
-      </Head>
       <HeroSection />
       <AboutMe />
       <FormSection/>
