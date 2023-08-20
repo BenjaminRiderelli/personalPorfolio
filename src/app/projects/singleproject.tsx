@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Skeleton } from "@mui/material";
-import { Carousel } from "./carousel";
 import { BsGithub, BsCodeSlash } from "react-icons/bs";
+import Carousel from "../../components/carousel/carousel";
 
 interface SheetData {
   name: string;
@@ -55,7 +55,6 @@ export default function Project({ row }: ProjectProps) {
     updateTestData();
   }, [row]);
 
-
   const techStack = testData.techStack.map((tech) => (
     <li key={tech}>
       <p className="text-lg">{tech}</p>
@@ -72,7 +71,6 @@ export default function Project({ row }: ProjectProps) {
         <div className="flex items-center justify-center bg-light-bg-color dark:bg-dark-bg-color w-full min-h-screen lg:w-3/4">
           <Skeleton width="90%" height="100vh" />
         </div>
-
         <div
           className={`flex flex-col w-full min-h-screen lg:w-1/2 bg-light-bg-color dark:bg-dark-bg-color ${
             row % 2 == 0 ? "lg:border-l-2" : "lg:border-r-2"
@@ -91,7 +89,7 @@ export default function Project({ row }: ProjectProps) {
           </div>
 
           <div className="flex flex-col justify-between gap-8 h-full w-full p-8 ">
-            <Skeleton height="80vh" />
+            <Skeleton height="100vh" />
 
             <div className="flex gap-16 text-light-text-color dark:text-dark-text-color">
               <span className="flex gap-4 items-center cursor-pointer">
@@ -121,7 +119,19 @@ export default function Project({ row }: ProjectProps) {
         } h-full w-full border-b-2 border-light-text-color dark:border-dark-text-color`}
       >
         <div className="flex items-center  bg-light-bg-color dark:bg-dark-bg-color w-full min-h-screen lg:w-3/4">
-          <Carousel images={testData.pics} />
+          <Carousel autoSlide={false} autoSlideInterval={3000}>
+            {testData.pics.map((image) => {
+              return (
+                <img
+                  style={{ objectFit: "cover" }}
+                  className="object-fit h-screen min-w-[800px]  md:min-w-full w-full"
+                  key={image}
+                  alt="project image"
+                  src={image}
+                />
+              );
+            })}
+          </Carousel>
         </div>
 
         <div
