@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Skeleton } from "@mui/material";
 import { BsGithub, BsCodeSlash } from "react-icons/bs";
 import CustomCarousel from "../../components/carousel/carousel";
+import AnotherCarousel from "../../components/carousel/anothercarousel";
 
 interface SheetData {
   name: string;
@@ -119,7 +120,7 @@ export default function Project({ row }: ProjectProps) {
         } h-full w-full border-b-2 border-light-text-color dark:border-dark-text-color`}
       >
         <div className="flex items-center  bg-light-bg-color dark:bg-dark-bg-color w-full min-h-screen lg:w-3/4">
-          <CustomCarousel>
+          {/* <CustomCarousel>
             {testData.pics.map((image) => {
               return (
                 <img
@@ -130,7 +131,22 @@ export default function Project({ row }: ProjectProps) {
                 />
               );
             })}
-          </CustomCarousel>
+          </CustomCarousel> */}
+          <AnotherCarousel
+          autoSlide={false}
+          autoSlideInterval={3000}
+          >
+            {testData.pics.map((image) => {
+              return (
+                <img
+                  className="object-cover h-screen w-full"
+                  key={image}
+                  alt="project image"
+                  src={image}
+                />
+              );
+            })}
+          </AnotherCarousel>
         </div>
 
         <div
