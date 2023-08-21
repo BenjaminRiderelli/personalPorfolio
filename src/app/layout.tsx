@@ -8,6 +8,8 @@ import Toggler from "../components/inputs/toggler";
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
 
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 const navLinks = [
@@ -15,13 +17,16 @@ const navLinks = [
   { title: "Projects", path: "/projects" },
 ];
 
+
+
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-
+  
   const [lightModeIsChecked, setLightModeIsChecked] = useState(true);
   const [showNavBar, setShowNavBar] = useState(false);
 
@@ -67,9 +72,6 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={lightModeIsChecked ? "light" : "dark"}>
-      <head>
-        <title>Benjamin Riderelli</title>
-      </head>
       <body
         className={`relative flex flex-col min-h-screen no-scrollbar ${
           showNavBar ? "overflow-hidden" : ""
