@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 interface Props{
-    
+
 }
 
 const NotFound = ({}: Props) => {
@@ -13,7 +13,7 @@ const NotFound = ({}: Props) => {
           404 - not found x_x
         </h1>
         <Link
-          className="text-center border border-light-text-color dark:border-dark-text-color p-8"
+          className="text-center border border-light-text-color dark:border-dark-text-color p-8 active:scale-95"
           href="/"
         >
           Return Home
