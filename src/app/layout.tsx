@@ -7,8 +7,13 @@ import { usePathname } from "next/navigation";
 import Toggler from "../components/inputs/toggler";
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
+import { Roboto } from "next/font/google";
 
-
+const roboto = Roboto({
+  weight:[ "400","500", "700"],
+  styles:["italic","normal"],
+  subsets:["latin-ext"]
+})
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -73,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={lightModeIsChecked ? "light" : "dark"}>
       <body
-        className={`relative flex flex-col min-h-screen no-scrollbar ${
+        className={`relative flex flex-col min-h-screen no-scrollbar ${roboto.className}  ${
           showNavBar ? "overflow-hidden" : ""
         }`}
       >
