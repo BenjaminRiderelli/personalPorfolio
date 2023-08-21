@@ -15,8 +15,8 @@ interface ProjectProps {
 }
 
 export const fetchData = async (row: number) => {
-  const baseUrl = process.env.BASE_URL ? process.env.BASE_URL : "http://localhost:3000"
-  const response = await fetch(`${baseUrl}/api/getprojectbyid?id=${row}`)
+  
+  const response = await fetch(`https://benjaminriderelli.vercel.app/api/getprojectbyid?id=${row}`)
   const data = await response.json();
   return data.body.data.values[0];
 };
