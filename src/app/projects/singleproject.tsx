@@ -17,45 +17,28 @@ interface ProjectProps {
   row: number;
 }
 
-export default function Project({ row }: ProjectProps) {
-  const [testData, setTestData] = useState<SheetData>({
-    name: "",
-    description: "",
-    pics: [],
-    techStack: [],
-    workingLink: "",
-    githubLink: "",
-  });
+const fetchData = async (row: number) => {
+  const response = await fetch(`/api/getprojectbyid?id=${row}`);
+  const data = await response.json();
+  return data;
+};
 
-  const [isLoading, setIsLoading] = useState(false);
+export default async function Project({ row }: ProjectProps) {
+  
+  const data = await fetchData(row);
+  const [name, description, pics, techStackArr, workingLink, githubLink] =
+    data.body.data.values[0];
 
-  useEffect(() => {
-    setIsLoading(true);
-    const fetchData = async () => {
-      const response = await fetch(`/api/getprojectbyid?id=${row}`);
-      const data = await response.json();
-      return data;
-    };
+  const testData = {
+    name,
+    description,
+    pics,
+    techStackArr,
+    workingLink,
+    githubLink,
+  };
 
-    const updateTestData = async () => {
-      const data = await fetchData();
-      const [name, description, pics, techStack, workingLink, githubLink] =
-        data.body.data.values[0];
-      setTestData({
-        name,
-        description,
-        pics: JSON.parse(pics) ?? [],
-        techStack: JSON.parse(techStack) ?? [],
-        workingLink,
-        githubLink,
-      });
-      setIsLoading(false);
-    };
-
-    updateTestData();
-  }, [row]);
-
-  const techStack = testData.techStack.map((tech) => (
+  const techStack = testData.techStackArr.map((tech) => (
     <li key={tech}>
       <p className="text-lg">{tech}</p>
     </li>
