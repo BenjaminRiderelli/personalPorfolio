@@ -15,19 +15,20 @@ interface ProjectProps {
 }
 
 export const fetchData = async (row: number) => {
-  const response = await fetch(`/api/getprojectbyid?id=${row}`);
+  const baseUrl = process.env.BASE_URL ? process.env.BASE_URL : "http://localhost:3000"
+  const response = await fetch(`${baseUrl}/api/getprojectbyid?id=${row}`)
   const data = await response.json();
-  console.log(data);
-  return data;
+  return data.body.data.values[0];
 };
 
 export default async function Project({ row }: ProjectProps) {
+ 
+  const res = await fetchData(row)
 
-  const data = await fetchData(row);
-  const [name, description, pics, techStackArr, workingLink, githubLink] =
-    data.body.data.values[0];
-    
-  const testData:SheetData = {
+  const [name, description, pics, techStackArr, workingLink, githubLink] = res
+
+
+  const testData: SheetData = {
     name,
     description,
     pics: JSON.parse(pics) ?? [],
@@ -35,6 +36,8 @@ export default async function Project({ row }: ProjectProps) {
     workingLink,
     githubLink,
   };
+
+
   const techStack = testData.techStack.map((tech: string) => (
     <li key={tech}>
       <p className="text-lg">{tech}</p>
@@ -50,7 +53,7 @@ export default async function Project({ row }: ProjectProps) {
       >
         <div className="flex items-center  bg-light-bg-color dark:bg-dark-bg-color w-full min-h-screen lg:w-3/4">
           <Carousel autoSlide={false} autoSlideInterval={3000}>
-            {testData.pics.map((image: string) => {
+            {testData.pics.map((image) => {
               return (
                 <img
                   style={{ objectFit: "cover" }}

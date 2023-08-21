@@ -1,15 +1,18 @@
 import { google } from "googleapis";
-import { NextApiRequest, NextApiResponse } from "next";
+import { url } from "inspector";
+import { NextRequest, NextResponse } from "next/server";
+import { URL } from "url";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "GET") {
-    res.status(405).json({ message: "just for Getting my friend" });
-  }
 
+
+export async function GET(
+  req: NextRequest,
+  res: NextResponse
+) { 
+  
   try {
+    const {searchParams} = new URL(req.url as string)
+    
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -27,16 +30,16 @@ export default async function handler(
       version: "v4",
     });
 
-    const { id } = req.query;
-
+    const id = searchParams.get('id');
+    
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
       range: `Projects!A${id}:F${id}`,
     });
 
-    return res.status(200).json({ body: response });
+    return NextResponse.json({body:response, status:200})
   } catch (e) {
     console.log(e)
-    return res.status(500).send({ message: "something went wrong x_x" });
+    return NextResponse.json({body:"something went wrong x_x", status:500});
   }
 }

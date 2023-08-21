@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Project from "./singleproject";
 import type { Metadata } from "next";
 
