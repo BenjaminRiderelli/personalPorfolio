@@ -15,12 +15,22 @@ interface ProjectProps {
 }
 
 export const fetchData = async (row: number) => {
-  const response = await fetch(`https://benjaminriderelli.vercel.app/api/getprojectbyid?id=${row}`)
+  const response = await fetch(
+    `https://benjaminriderelli.vercel.app/api/getprojectbyid?id=${row}`
+  );
   const data = await response.json();
-  console.log("DATAAAAAAAA->",data.body.data?.values)
-  return data.body.data
+  const finalData = data.body.data
     ? data.body.data.values[0]
-    : ["", "", JSON.stringify([]), JSON.stringify([]), "", ""];
+    : [
+        "data not found x_x",
+        "There has been a problem with our server",
+        JSON.stringify([]),
+        JSON.stringify([]),
+        "",
+        "",
+      ];
+
+  return finalData;
 };
 
 export default async function Project({ row }: ProjectProps) {
