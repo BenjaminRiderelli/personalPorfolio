@@ -27,6 +27,8 @@ export default async function Project({ row }: ProjectProps) {
 
   const res = await fetchData(row, baseUrl);
 
+  console.log(baseUrl)
+
   const [name, description, pics, techStackArr, workingLink, githubLink] = res;
 
   const testData: SheetData = {
