@@ -21,7 +21,7 @@ export const fetchData = async (row: number) => {
   const data = await response.json();
   return data.body.data
     ? data.body.data.values[0]
-    : ["", "", "", "", "", ""];
+    : ["", "", JSON.stringify([]), JSON.stringify([]), "", ""];
 };
 
 export default async function Project({ row }: ProjectProps) {
