@@ -17,7 +17,7 @@ interface ProjectProps {
 export const fetchData = async (row: number) => {
   const response = await fetch(`https://benjaminriderelli.vercel.app/api/getprojectbyid?id=${row}`)
   const data = await response.json();
-  console.log("DATAAAAAAAA->",data)
+  console.log("DATAAAAAAAA->",data.body.data?.values)
   return data.body.data
     ? data.body.data.values[0]
     : ["", "", JSON.stringify([]), JSON.stringify([]), "", ""];
