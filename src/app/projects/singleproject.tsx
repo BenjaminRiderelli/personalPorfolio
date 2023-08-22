@@ -15,20 +15,19 @@ interface ProjectProps {
 }
 
 export const fetchData = async (row: number) => {
-  
-  const response = await fetch(`http://localhost:3000/api/getprojectbyid?id=${row}`)
+  const baseUrl = process.env.BASE_URL
+    ? process.env.BASE_URL
+    : "http://localhost:3000";
+
+  const response = await fetch(`${baseUrl}/api/getprojectbyid?id=${row}`);
   const data = await response.json();
   return data.body.data.values[0];
 };
 
 export default async function Project({ row }: ProjectProps) {
- 
-  const res = await fetchData(row)
-
   
-  const [name, description, pics, techStackArr, workingLink, githubLink] = res
-  
-  
+  const res = await fetchData(row);
+  const [name, description, pics, techStackArr, workingLink, githubLink] = res;
 
   const testData: SheetData = {
     name,
@@ -38,7 +37,6 @@ export default async function Project({ row }: ProjectProps) {
     workingLink,
     githubLink,
   };
-
 
   const techStack = testData.techStack.map((tech: string) => (
     <li key={tech}>
