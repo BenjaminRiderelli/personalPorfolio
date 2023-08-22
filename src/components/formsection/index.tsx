@@ -44,7 +44,7 @@ const FormSection = () => {
       try {
         setIsPosting(true);
         const response = await fetch(
-          "/api/submit",
+          "https://benjaminriderelli.vercel.app/api/submit",
           {
             method: "POST",
             headers: {
