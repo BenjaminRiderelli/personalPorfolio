@@ -2,7 +2,7 @@ import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
 import { URL } from "url";
 
-export async function GET(req: Request, res: NextResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
  
  
   if (req.method !== "GET") {
