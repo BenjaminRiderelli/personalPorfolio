@@ -15,14 +15,19 @@ interface ProjectProps {
 }
 
 //https://benjaminriderelli.vercel.app
-export const fetchData = async (row: number) => {
-  const response = await fetch(`http://localhost:3000/api/getprojectbyid?id=${row}`);
+export const fetchData = async (row: number, url:string) => {
+  const baseUrl = process.env.BASE_URL ? process.env.BASE_URL : "http://localhost:3000"
+  const response = await fetch(`${baseUrl}/api/getprojectbyid?id=${row}`);
   const data = await response.json();
   return data.body.data.values[0];
 };
 
 export default async function Project({ row }: ProjectProps) {
-  const res = await fetchData(row);
+
+
+
+
+  const res = await fetchData(row,"hola");
 
   const [name, description, pics, techStackArr, workingLink, githubLink] = res;
 
