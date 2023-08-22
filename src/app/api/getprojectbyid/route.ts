@@ -12,7 +12,7 @@ export async function GET(
   
   try {
     const {searchParams} = new URL(req.url as string)
-    
+
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,

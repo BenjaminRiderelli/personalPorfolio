@@ -43,14 +43,17 @@ const FormSection = () => {
     } else {
       try {
         setIsPosting(true);
-        const response = await fetch("/api/submit", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          "https://benjaminriderelli.vercel.app/api/submit",
+          {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         setIsPosting(false);
         setFormData({ name: "", email: "", message: "Thank you!" });
