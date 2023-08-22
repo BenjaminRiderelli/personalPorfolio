@@ -21,11 +21,11 @@ export const fetchData = async (row: number) => {
 
   const response = await fetch(`${baseUrl}/api/getprojectbyid?id=${row}`);
   const data = await response.json();
-  return data.body.data.values[0];
+
+  return data.body.data.values ? data.body.data.values[0] : [];
 };
 
 export default async function Project({ row }: ProjectProps) {
-  
   const res = await fetchData(row);
   const [name, description, pics, techStackArr, workingLink, githubLink] = res;
 
