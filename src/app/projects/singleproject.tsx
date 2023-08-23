@@ -19,6 +19,7 @@ export const revalidate = 60;
 export const fetchData = async (row: number) => {
   const response = await fetch(
     `https://benjaminriderelli.vercel.app/api/getprojectbyid?id=${row}`
+    //,{ cache: "no-store" }
   );
   const data = await response.json();
   const finalData = data.body.data
