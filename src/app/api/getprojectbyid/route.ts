@@ -4,13 +4,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { URL } from "url";
 
 export async function GET(req: NextRequest, res: NextResponse) {
-  
-  
-  
   const { searchParams } = new URL(req.url as string);
   const id = searchParams.get("id");
 
-  
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -28,7 +24,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
       auth,
       version: "v4",
     });
-
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
