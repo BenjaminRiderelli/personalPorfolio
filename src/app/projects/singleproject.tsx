@@ -14,7 +14,8 @@ interface ProjectProps {
   row: number;
 }
 
-export const revalidate = 60;
+// export const revalidate = 60;
+export const dynamic = 'force-dynamic'
 
 export const fetchData = async (row: number) => {
   const response = await fetch(
