@@ -8,15 +8,15 @@ interface SheetForm{
     message:string
 }
 
-export async function POST(req:Request, res:NextResponse){
+export async function POST(req:NextRequest){
 
     if(req.method !== "POST"){
         NextResponse.json({message:"just for posting", status:405})
     }
 
-    const body = await req.json()   
-    
-    
+    const body : SheetForm = await req.json()   
+
+
     try{
         const auth = new google.auth.GoogleAuth({
             credentials:{
