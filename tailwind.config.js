@@ -19,6 +19,10 @@ module.exports = {
         "light-text-color":"var(--light-text-color)",
         "dark-text-color": "var(--dark-text-color)"
       },
+      boxShadow: {
+        'light': '012px 12px 2px 1px var(--dark-bg-color);',
+        'dark': '012px 12px 2px 1px var(--light-bg-color);',
+      }
     },
   },
   plugins: [],

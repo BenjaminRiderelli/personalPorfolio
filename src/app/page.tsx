@@ -1,7 +1,7 @@
 import HeroSection from '../components/herosection/'
-import AboutMe from "../components/aboutme/";
 import FormSection from "../components/formsection/";
 import type { Metadata } from "next";
+import ProjectSection from '@/components/projectssection/projectsection';
 
 export const metadata: Metadata = {
   title:"Benjamin Riderelli",
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <section className="min-h-screen">
       <HeroSection />
-      <AboutMe />
+      <ProjectSection/>
       <FormSection/>
     </section>
   );
