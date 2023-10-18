@@ -19,7 +19,6 @@ interface ProjectProps {
 export const fetchData = async (row: number) => {
   const response = await fetch(
     `https://benjaminriderelli.vercel.app/api/projects/${row}`,
-    // `http://localhost:3000/api/projects/${row}`,
     {
       next: { revalidate: 0 },
     }
