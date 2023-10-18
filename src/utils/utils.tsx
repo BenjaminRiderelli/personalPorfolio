@@ -19,4 +19,3 @@ export const fetchData = async (row: number) => {
   
     return finalData;
   };
-  
