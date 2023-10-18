@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   // const { searchParams } = new URL(req.url as string);
   // const id = searchParams.get("id");
 
-  const { pathname } = new URL(req.url as string);
+  const { pathname } = new URL(req.url);
   const id = pathname.split("/")[3]
 
   console.log("AAAA",pathname)
