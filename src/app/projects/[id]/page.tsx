@@ -1,6 +1,6 @@
 import { BsGithub, BsCodeSlash } from "react-icons/bs";
 import Carousel from "../../../components/carousel/carousel";
-import { fetchData } from "@/components/projectssection/projectcard";
+import { fetchData } from "@/utils/fetchData";
 
 interface SheetData {
   name: string;
