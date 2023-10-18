@@ -20,7 +20,7 @@ export const fetchData = async (row: number) => {
   const response = await fetch(
     `https://benjaminriderelli.vercel.app/api/getprojectbyid?id=${row}`,
     {
-      next: { revalidate: 600 },
+      next: { revalidate: 0 },
     }
   );
   const data = await response.json();
