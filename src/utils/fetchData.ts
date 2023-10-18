@@ -1,6 +1,6 @@
 export const fetchData = async (row: number) => {
     const response = await fetch(
-      `https://benjaminriderelli.vercel.app/api/projects/${row}`,
+      `https://benjaminriderelli.vercel.app/api/projects?id=${row}`,
       {
         next: { revalidate: 0 },
       }
