@@ -8,7 +8,8 @@ export async function GET(req: NextRequest) {
 
   const { pathname } = new URL(req.url as string);
   const id = pathname.split("/")[3]
-  console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",id)
+
+  console.log("AAAA",pathname)
   
   try {
     const auth = new google.auth.GoogleAuth({
