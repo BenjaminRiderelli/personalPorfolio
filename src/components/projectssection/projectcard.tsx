@@ -39,7 +39,7 @@ export async function fetchData(row: number) {
 };
 
 
-const ProjectCard = async ({ row }: ProjectProps) => {
+async function ProjectCard({ row }: ProjectProps){
   const res = await fetchData(row);
   const [name, description, pics, techStackArr, workingLink, githubLink] = res;
 
@@ -98,4 +98,4 @@ const ProjectCard = async ({ row }: ProjectProps) => {
   );
 };
 
-export default ProjectCard;
+export default ProjectCard
