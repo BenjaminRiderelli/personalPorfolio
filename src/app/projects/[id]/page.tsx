@@ -16,7 +16,7 @@ interface ProjectProps {
 
 export const revalidate = 60;
 
-export const fetchData = async (row: number | undefined) => {
+export async function fetchData(row: number) {
   let finalData: string[];
   try {
     const response = await fetch(
