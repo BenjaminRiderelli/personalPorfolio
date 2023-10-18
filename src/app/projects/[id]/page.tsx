@@ -19,10 +19,12 @@ interface ProjectProps {
 
 
 async function Project({ params }: ProjectProps) {
+  return<div>Hola</div>
   const row = Number(params.id);
   const res = await fetchData(row);
 
   const [name, description, pics, techStackArr, workingLink, githubLink] = res;
+
   const data: SheetData = {
     name,
     description,
