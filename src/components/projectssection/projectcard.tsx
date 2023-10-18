@@ -16,7 +16,7 @@ interface ProjectProps {
   row: number;
 }
 
-export const fetchData = async (row: number) => {
+export async function fetchData(row: number) {
   const response = await fetch(
     `https://benjaminriderelli.vercel.app/api/projects/${row}`,
     {
