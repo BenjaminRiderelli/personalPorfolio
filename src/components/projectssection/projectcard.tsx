@@ -29,8 +29,8 @@ export async function fetchData(row: number) {
     : [
         "data not found x_x",
         "There has been a problem with our server",
-        JSON.stringify([]),
-        JSON.stringify([]),
+        [],
+        [],
         "",
         "",
       ];
@@ -46,8 +46,8 @@ async function ProjectCard({ row }: ProjectProps){
   const data: SheetData = {
     name,
     description,
-    pics: JSON.parse(pics) ?? [],
-    techStack: JSON.parse(techStackArr) ?? [],
+    pics,
+    techStack:techStackArr,
     workingLink,
     githubLink,
   };
