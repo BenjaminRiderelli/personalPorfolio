@@ -3,7 +3,7 @@ import ProjectCard from "./projectcard";
 const ProjectSection = () => {
   return (
     <section className="flex flex-col justify-between flex-wrap w-full min-h-screen border-2 border-t-0 border-b-0  border-light-text-color bg-light-bg-color dark:border-dark-text-color dark:bg-dark-bg-color">
-      <header className="flex flex-col justify-center items-center gap-4 w-full border-b-2 border-light-text-color dark:border-dark-text-color dark:text-dark-text-color p-8">
+      <header className="flex flex-col justify-center items-center gap-4 w-full border-light-text-color dark:border-dark-text-color dark:text-dark-text-color p-8">
         <h2 className="text-3xl font-semibold">Projects</h2>
         <p className="text-xl text-center font-semibold tracking-wide">
           Here's some of the work I've done independently

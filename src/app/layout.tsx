@@ -18,7 +18,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 const navLinks = [
   { title: "Home", path: "/" },
-  { title: "Projects", path: "/projects" },
 ];
 
 
@@ -82,7 +81,7 @@ export default function RootLayout({
         }`}
       >
         <nav className="flex justify-between gap-8 py-4 px-8 md:px-12 text-xl w-full border-2 border-black bg-light-bg-color dark:text-dark-text-color dark:bg-dark-bg-color dark:border-dark-text-color">
-          <h1>Benjamin Riderelli</h1>
+          <Link href="/"><h1>Benjamin Riderelli</h1></Link>
           <div className="text-2xl md:hidden">
             <AiOutlineMenu 
             className="cursor-pointer"

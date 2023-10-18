@@ -44,10 +44,6 @@ export default function Carousel({
         >
           <BsChevronCompactLeft size={40} />
         </button>
-        <div className="md:hidden absolute flex flex-col justify-center items-center transform -translate-x-1/2 -translate-y-1/2 border top-1/2 left-1/2 bg-dark-bg-color p-8 opacity-70">
-          <BsArrow90DegRight className="text-dark-text-color font-bold" />
-          <p className="text-dark-text-color font-bold ">Turn me arround</p>
-        </div>
         <button
           onClick={next}
           className="p-1 shadow bg-white/80 text-gray-800 hover:bg-light-bg-color active:scale-95"

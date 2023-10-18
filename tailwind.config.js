@@ -22,6 +22,15 @@ module.exports = {
       boxShadow: {
         'light': '012px 12px 2px 1px var(--dark-bg-color);',
         'dark': '012px 12px 2px 1px var(--light-bg-color);',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
       }
     },
   },

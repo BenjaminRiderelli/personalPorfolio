@@ -59,19 +59,19 @@ const ProjectCard = async ({ row }: ProjectProps) => {
 
   return (
     <div className="flex flex-col gap-4 border-2 border-r-0 border-l-0 md:border-l-2 md:border-r-2 border-light-text-color dark:border-dark-text-color p-4">
-      <div className="flex flex-col items-center justify-center relative border-light-text-color  w-[500px] max-w-[calc(100vw-2.5rem)] h-[300px] overflow-hidden">
+      <div className="flex flex-col items-center justify-center relative border-light-text-color dark:border-dark-text-color w-[500px] max-w-[calc(100vw-2.5rem)] h-[300px] overflow-hidden">
         <Link
         href={`/projects/${row}`}
         >
           <Image
-            className="transition-all hover:scale-105 cursor-pointer z-10 border-2 border-light-text-color "
+            className="transition-all hover:scale-105 cursor-pointer z-10 border-2 border-light-text-color dark:border-dark-text-color "
             fill={true}
             src={data.pics[0]}
             alt={`picture of project ${row}`}
           />
         </Link>
       </div>
-      <div className="border-2 border-light-text-color">
+      <div className="border-2 border-light-text-color dark:text-dark-text-color dark:border-dark-text-color">
         <h2 className="text-light-text-color text-center text-2xl p-4">
           {data.name}
         </h2>
