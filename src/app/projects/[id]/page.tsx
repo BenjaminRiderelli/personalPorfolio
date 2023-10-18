@@ -18,7 +18,7 @@ interface ProjectProps {
 
 
 
-export default async function Project({ params }: ProjectProps) {
+async function Project({ params }: ProjectProps) {
   const row = Number(params.id);
   const res = await fetchData(row);
 
@@ -89,3 +89,6 @@ export default async function Project({ params }: ProjectProps) {
     </section>
   );
 }
+
+
+export default Project
