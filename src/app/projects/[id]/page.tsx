@@ -1,6 +1,5 @@
 import { BsGithub, BsCodeSlash } from "react-icons/bs";
 import Carousel from "../../../components/carousel/carousel";
-import { fetchData } from "@/utils/utils";
 
 interface SheetData {
   name: string;
@@ -14,6 +13,30 @@ interface SheetData {
 interface ProjectProps {
   params: { id: string };
 }
+
+export const fetchData = async (row: number) => {
+  const response = await fetch(
+    `https://benjaminriderelli.vercel.app/api/projects/${row}`,
+    // `http://localhost:3000/api/projects/${row}`,
+    {
+      next: { revalidate: 0 },
+    }
+  );
+  const data = await response.json();
+  const finalData = data.body.data
+    ? data.body.data.values[0]
+    : [
+        "data not found x_x",
+        "There has been a problem with our server",
+        JSON.stringify([]),
+        JSON.stringify([]),
+        "",
+        "",
+      ];
+
+  return finalData;
+};
+
 
 export default async function Project({ params }: ProjectProps) {
   const row = Number(params.id);

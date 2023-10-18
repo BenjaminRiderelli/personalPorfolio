@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { BsGithub, BsCodeSlash } from "react-icons/bs";
-import { fetchData } from "@/utils/utils";
+import { fetchData } from "@/app/projects/[id]/page";
 import Link from "next/link";
 
 interface SheetData {
