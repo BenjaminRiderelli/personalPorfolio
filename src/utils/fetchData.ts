@@ -1,6 +1,9 @@
+
+const url = process.env.BASE_URL ?? "http://localhost:3000"
+
 export const fetchData = async (row: number) => {
     const response = await fetch(
-      `https://benjaminriderelli.vercel.app/api/getprojectbyid?id=${row}`,
+      `${url}/api/getprojectbyid?id=${row}`,
       {
         next: { revalidate: 0 },
       }
