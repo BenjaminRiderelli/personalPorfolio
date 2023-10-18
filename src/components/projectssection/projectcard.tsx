@@ -17,28 +17,6 @@ interface ProjectProps {
   row: number;
 }
 
-// export const fetchData = async (row: number) => {
-//   const response = await fetch(
-//     `http://localhost:3000/api/projects/${row}`,
-//     {
-//       next: { revalidate: 0 },
-//     }
-//   );
-//   const data = await response.json();
-//   const finalData = data.body.data
-//     ? data.body.data.values[0]
-//     : [
-//         "data not found x_x",
-//         "There has been a problem with our server",
-//         JSON.stringify([]),
-//         JSON.stringify([]),
-//         "",
-//         "",
-//       ];
-
-//   return finalData;
-// };
-
 const ProjectCard = async ({ row }: ProjectProps) => {
   const res = await fetchData(row);
   const [name, description, pics, techStackArr, workingLink, githubLink] = res;

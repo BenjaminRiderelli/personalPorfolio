@@ -129,7 +129,7 @@ const FormSection = () => {
       </div>
       <div className="flex flex-col gap-4 w-3/4 justify-center md:w-1/4 md:min-h-[600px] text-light-text-color dark:text-dark-text-color">
         <h1 className="text-4xl font-extrabold">
-          Impressed by the cool fonts and the flying rocket?
+          Impressed by the cool projects and the flying rocket?
         </h1>
         <p className="text-2xl">Hit me up with a message 😁</p>
       </div>
