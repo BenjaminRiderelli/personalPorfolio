@@ -15,9 +15,6 @@ interface ProjectProps {
   params: { id: string };
 }
 
-
-
-
 async function Project({ params }: ProjectProps) {
   const row = Number(params.id);
   const res = await fetchData(row);
@@ -26,8 +23,8 @@ async function Project({ params }: ProjectProps) {
   const data: SheetData = {
     name,
     description,
-    pics: JSON.parse(pics) ?? [],
-    techStack: JSON.parse(techStackArr) ?? [],
+    pics: pics ? JSON.parse(pics) : [],
+    techStack: techStackArr ? JSON.parse(techStackArr) : [],
     workingLink,
     githubLink,
   };
@@ -90,5 +87,4 @@ async function Project({ params }: ProjectProps) {
   );
 }
 
-
-export default Project
+export default Project;
